@@ -1,0 +1,12 @@
+#chat {
+    display: none;
+}
+.messages {
+
+}
+.announcement {
+
+}
+.confirmed::after {
+    content: ' ✔';
+}
