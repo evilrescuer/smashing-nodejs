@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+    <script>
+        const ws = new WebSocket('ws://localhost:3000/');
+        ws.onmessage = (message) => {
+            console.log(`客户端：服务端说 ${message.data}`)
+        };
+
+        ws.onopen = () => {
+            console.log('客户端：websocket已打开');
+            setTimeout(() => {
+                ws.send('你好啊')
+            })
+        };
+
+        ws.onclose = () => {
+            console.log('客户端：websocket已关闭');
+        };
+    </script>
+</body>
+</html>
